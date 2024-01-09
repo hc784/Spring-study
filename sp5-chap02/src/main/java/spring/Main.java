@@ -8,7 +8,8 @@ public class Main {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppContext.class);
 		
 		c2 a = ctx.getBean("c",c2.class);
+		a.hi2();
 		
-		
+		ctx.close();
 	}
 }
