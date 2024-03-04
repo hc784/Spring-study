@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,8 +27,16 @@ public class SearchController {
 	@PostMapping("/EmailSearch")
 	public String emailSearchPost(Model model, @RequestParam String EmailSearch) {
 		
-		Member member1 = memberDao.selectByEmail(EmailSearch);
-		model.addAttribute("memberId", member1);
+		Member member = memberDao.selectByEmail(EmailSearch);
+		model.addAttribute("member", member);
 		return "EmailSearchRet";
+	}
+	
+	@GetMapping("/AllSearch")
+	public String allSearch(Model model)
+	{
+		List<Member> memLi = memberDao.selectAll();
+		model.addAttribute("memberList",memLi);
+		return "AllSearch";
 	}
 }

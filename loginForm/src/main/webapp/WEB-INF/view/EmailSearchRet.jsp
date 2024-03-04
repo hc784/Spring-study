@@ -5,8 +5,9 @@
     <title>Hello</title>
   </head>
   <body>
-	${requestScope.memberId.getEmail()}
-	${requestScope.memberId.getName()}
-	${requestScope.memberId.getPassword()}
-  </body>
+	${requestScope.member.getEmail()}
+	${requestScope.member.getName()}
+	${requestScope.member.getPassword()}
+  </body> <br>
+  <a href = "LoginPage">로그인 화면으로 이동</a>
 </html>

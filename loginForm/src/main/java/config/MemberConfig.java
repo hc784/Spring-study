@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import spring.Member;
 import spring.MemberDao;
+import spring.MemberRegisterService;
 
 @Configuration
 @EnableTransactionManagement
@@ -34,5 +35,9 @@ public class MemberConfig {
 		return new MemberDao(dataSource());
 	}
 	
+	@Bean
+	public MemberRegisterService memberRegisterService() {
+		return new MemberRegisterService(memberDao());
+	}
 	
 }
