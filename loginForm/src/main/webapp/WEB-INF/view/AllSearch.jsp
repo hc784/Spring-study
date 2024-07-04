@@ -14,6 +14,6 @@
   	Password : ${item.getPassword()}<br>
   	</p>
   </c:forEach>   	
-  <a href = "LoginPage">로그인 화면으로 이동</a>
+  <a href = "main">메인으로 이동</a>
   </body>
 </html>

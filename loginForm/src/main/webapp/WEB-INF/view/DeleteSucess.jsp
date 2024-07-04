@@ -6,6 +6,6 @@
   </head>
   <body>
    	회원삭제가 완료되었습니다.
-   	<a href = "LoginPage">로그인 화면으로 이동</a>
+   	<a href = "main">메인으로 이동</a>
   </body>
 </html>

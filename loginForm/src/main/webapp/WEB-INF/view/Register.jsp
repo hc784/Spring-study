@@ -24,19 +24,23 @@
 	  <input type = "submit" value = "가입완료">
   
   </form> --%>
-  
+ 
     <form:form action = "register" modelAttribute = "memberForm">
 	  <p>
 	  <label>이메일</label><br><form:input path = "email" />
+	  <form:errors path = "email"/>
 	  </p>
 	  <p>
 	  <label>이름</label><br><form:input path = "name" />
+	  <form:errors path = "name"/>
 	  </p>
 	  <p>
 	  <label>비밀번호</label><br><form:input path = "password" />
+	  <form:errors path = "password"/>
 	  </p>
 	  <p>
 	  <label>비밀번호 확인</label><br><form:input path = "passwordconfirm" />
+	  <form:errors path = "passwordconfirm"/>
 	  </p>
 	  <input type = "submit" value = "가입완료">
   

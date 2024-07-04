@@ -2,15 +2,17 @@ package config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import controller.LoginController;
+import controller.RegisterController;
 import controller.SearchController;
 import controller.UpdateController;
 import spring.MemberDao;
 import spring.MemberRegisterService;
 
 @Configuration
+@ComponentScan(basePackages= {"controller"})
 public class ControllerConfig {
 	
 	private MemberDao memberDao;
@@ -22,13 +24,9 @@ public class ControllerConfig {
         this.memReg = memReg;
 	}
 	
-	@Bean
-	public LoginController loginController() {
-		return new LoginController(memReg,memberDao);
-	}
 	
 	@Bean 
-	public SearchController serachController() {
+	public SearchController searchController() {
 		return new SearchController(memberDao);
 	}
 	

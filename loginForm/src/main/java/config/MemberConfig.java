@@ -2,15 +2,17 @@ package config;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import spring.Member;
+
 import spring.MemberDao;
 import spring.MemberRegisterService;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages = {"spring"})
 public class MemberConfig {
 	
 	@Bean(destroyMethod = "close")

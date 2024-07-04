@@ -9,5 +9,5 @@
 	${requestScope.member.getName()}
 	${requestScope.member.getPassword()}
   </body> <br>
-  <a href = "LoginPage">로그인 화면으로 이동</a>
+  <a href = "main">메인으로 이동</a>
 </html>

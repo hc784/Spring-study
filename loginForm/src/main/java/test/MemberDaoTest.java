@@ -11,9 +11,9 @@ public class MemberDaoTest {
 		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(MemberConfig.class);
 		MemberDao dao = ac.getBean("memberDao",MemberDao.class);
 
-		dao.delete("aass");
+		dao.delete("aa");
 
-		
+		System.out.println("delete 성공");
 		ac.close();
 
 		
