@@ -70,4 +70,8 @@
     	select count(*) from board
 		<include refid = "criteria"></include>
     </select>
+    
+    <update id = "updateReplyCnt">
+    update board set replycnt = replycnt + #{amount} where bno = #{bno}
+    </update>
 </mapper>

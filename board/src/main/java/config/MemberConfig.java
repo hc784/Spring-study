@@ -7,15 +7,18 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
 import login.MemberDao;
 import login.MemberRegisterService;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"login", "board.service"})
+@ComponentScan(basePackages = {"login", "board.service","aop","sample"})
 @MapperScan(basePackages = {"mapper"})
+@EnableAspectJAutoProxy
 public class MemberConfig {
 	
 	@Bean(destroyMethod = "close")
@@ -54,5 +57,10 @@ public class MemberConfig {
 		se.setDataSource(dataSource());
 		return (SqlSessionFactory)se.getObject();
 	}
+	
+	/*
+	 * @Bean public DelegatingFilterProxy springSecurityFilterChain() { return new
+	 * DelegatingFilterProxy(); }
+	 */
 	
 }

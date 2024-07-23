@@ -8,6 +8,7 @@ import lombok.Data;
 public class BoardVO {
 	private Long bno;
 	private String title, content, writer;
-	private Date regdate, updateDate; 
+	private Date regdate, updateDate;
+	private int replyCnt;
 	
 }

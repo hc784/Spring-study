@@ -5,6 +5,21 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
+
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/root-context.xml
+			/WEB-INF/security-context.xml
+    	</param-value>
+	</context-param>
+	
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
  	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
@@ -22,19 +37,28 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
+				<!-- config.MemberConfig -->
 				config.MvcConfig
-				config.MemberConfig
 				config.ControllerConfig
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
+		
+		<multipart-config>
+			<location>C:\\upload\\temp</location>
+			<max-file-size>20971520</max-file-size> <!--1MB * 20 -->
+			<max-request-size>41943040</max-request-size><!-- 40MB -->
+			<file-size-threshold>20971520</file-size-threshold> <!-- 20MB -->
+		</multipart-config>
+		
 	</servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>
@@ -45,9 +69,27 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
+	
+	 	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+
+	
+	
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> 
+	
+
 
 </web-app>
+
+

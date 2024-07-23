@@ -47,7 +47,7 @@
 							<td><c:out value="${board.writer}" /></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${board.regdate}" /></td>
- 							<td><fmt:formatDate pattern="yyyy-MM-dd"
+							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${board.updateDate}" /></td>
 						</tr>
 					</c:forEach>
@@ -231,7 +231,8 @@
 										function(e) {
 
 											e.preventDefault();
-											actionForm.append("<input type='hidden' name='bno' value='"
+											actionForm
+													.append("<input type='hidden' name='bno' value='"
 															+ $(this).attr(
 																	"href")
 															+ "'>");
