@@ -1,4 +1,4 @@
-package controller.login;
+package login.controller;
 
 import javax.validation.Valid;
 

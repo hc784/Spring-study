@@ -1,4 +1,4 @@
-package controller.login;
+package login.controller;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;

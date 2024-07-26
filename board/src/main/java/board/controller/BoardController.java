@@ -1,5 +1,6 @@
 package board.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,12 +32,15 @@ public class BoardController {
 		model.addAttribute("pageMaker", new PageDTO(cri,service.getTotal(cri)));
 	}
 	
+	
 	@GetMapping("/register")
+	@PreAuthorize("isAuthenticated()")
 	public void register() {
 		
 	}
 	
 	@PostMapping("/register")
+	@PreAuthorize("isAuthenticated()")
 	public String register(BoardVO board, RedirectAttributes rttr)
 	{
 		log.info("register : " + board);

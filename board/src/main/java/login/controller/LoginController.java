@@ -1,4 +1,4 @@
-package controller.login;
+package login.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;

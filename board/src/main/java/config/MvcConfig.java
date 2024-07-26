@@ -4,6 +4,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -16,10 +17,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import interceptor.AuthCheckInterceptor;
+import login.interceptor.AuthCheckInterceptor;
 	
 @Configuration
 @EnableWebMvc
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 public class MvcConfig implements WebMvcConfigurer {
 
 	@Override

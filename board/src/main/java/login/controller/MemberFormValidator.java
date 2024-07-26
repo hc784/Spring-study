@@ -1,4 +1,4 @@
-package controller.login;
+package login.controller;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

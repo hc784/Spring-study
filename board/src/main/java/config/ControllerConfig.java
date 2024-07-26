@@ -5,11 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import controller.login.RegisterController;
-import controller.login.SearchController;
-import controller.login.UpdateController;
 import login.MemberDao;
 import login.MemberRegisterService;
+import login.controller.RegisterController;
+import login.controller.SearchController;
+import login.controller.UpdateController;
 
 @Configuration
 @ComponentScan(basePackages= {"controller","board.controller","rest"})
